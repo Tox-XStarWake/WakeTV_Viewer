@@ -30,18 +30,135 @@
      
         <script src="https://embed.twitch.tv/embed/v1.js"></script> 
 
-    
-    
-    
-    
-    <div id="ChefDuckie-twitch-embed"></div>  
-    
-    
-    
-    
+<!╌ ╌>
+<!╌ ╌>
+
+<div id="XStarWake-twitch-embed"></div>
+<div id="ToxicSalt-twitch-embed"></div>
+<div id="SpaceMages-twitch-embed"></div>
+<div id="ChefDuckie-twitch-embed"></div>
+<div id="DeadInTheScene-twitch-embed"></div>
+<div id="DoubleKnees-twitch-embed"></div>
+<div id="FearsomeBeard-twitch-embed"></div>
+<div id="Kelling101-twitch-embed"></div>
+<div id="LKwilli-twitch-embed"></div>
+<div id="MarianneWray-twitch-embed"></div>
+<div id="MiniDevil69-twitch-embed"></div>
+<div id="ToastyThaBrave-twitch-embed"></div>
+<div id="ShadowDanyelle-twitch-embed"></div>
+<div id="SKSGodOfGames-twitch-embed"></div>
+
+<!╌ ╌>
+<!╌ ╌>
+  
+
+<!╌ ╌>
+<!╌ XSTARWAKE GO-LIVE CODE ╌>
+<!╌ ╌>
 
     
+    <script type="text/javascript">
+    var options = {
+      width: 400,
+      height: 480,
+      channel: "XStarWake",
+      layout: "video-with-chat",
+      theme: "dark",
+      parent: ["glitch.com", "xstarwake.org", "www.xstarwake.org", "www-xstarwake-org.glitch.me", "localhost"], 
+    };
+    var XStarWakeStream = new Twitch.Player("XStarWake-twitch-embed", options);
+    XStarWakeStream.addEventListener(Twitch.Player.READY, initiate)
+    function initiate() {
+      XStarWakeStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
+      XStarWakeStream.addEventListener(Twitch.Player.OFFLINE, handleOffline);
+      XStarWakeStream.removeEventListener(Twitch.Player.READY, initiate);
+    }
+    function handleOnline() {
+      document.getElementById("XStarWake-twitch-embed").classList.remove('hide');
+      XStarWakeStream.removeEventListener(Twitch.Player.ONLINE, handleOnline);
+      XStarWakeStream.addEventListener(Twitch.Player.OFFLINE, handleOffline);
+      XStarWakeStream.setMuted(false);
+    }
+    function handleOffline() {
+      document.getElementById("XStarWake-twitch-embed").classList.add('hide');
+      XStarWakeStream.removeEventListener(Twitch.Player.OFFLINE, handleOffline);
+      XStarWakeStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
+      XStarWakeStream.setMuted(true);
+    }
+  </script>
+
     
+<!╌ ╌>
+<!╌ TOXICSALT GO-LIVE CODE ╌>
+<!╌ ╌>
+    <script type="text/javascript">
+    var options = {
+      width: 400,
+      height: 480,
+      channel: "Toxic__Salt",
+      layout: "video-with-chat",
+      theme: "dark",
+      parent: ["glitch.com", "xstarwake.org", "www.xstarwake.org", "www-xstarwake-org.glitch.me", "localhost"], 
+    };
+    var ToxicSaltStream = new Twitch.Player("ToxicSalt-twitch-embed", options);
+    ToxicSaltStream.addEventListener(Twitch.Player.READY, initiate)
+    function initiate() {
+      ToxicSaltStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
+      ToxicSaltStream.addEventListener(Twitch.Player.OFFLINE, handleOffline);
+      ToxicSaltStream.removeEventListener(Twitch.Player.READY, initiate);
+    }
+    function handleOnline() {
+      document.getElementById("ToxicSalt-twitch-embed").classList.remove('hide');
+      ToxicSaltStream.removeEventListener(Twitch.Player.ONLINE, handleOnline);
+      ToxicSaltStream.addEventListener(Twitch.Player.OFFLINE, handleOffline);
+      ToxicSaltStream.setMuted(false);
+    }
+    function handleOffline() {
+      document.getElementById("ToxicSalt-twitch-embed").classList.add('hide');
+      ToxicSaltStream.removeEventListener(Twitch.Player.OFFLINE, handleOffline);
+      ToxicSaltStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
+      ToxicSaltStream.setMuted(true);
+    }
+  </script>
+
+    
+<!╌ ╌>
+<!╌ SPACEMAGES GO-LIVE CODE ╌>
+<!╌ ╌>
+    <script type="text/javascript">
+    var options = {
+      width: 400,
+      height: 480,
+      channel: "SpaceMages",
+      layout: "video-with-chat",
+      theme: "dark",
+      parent: ["glitch.com", "xstarwake.org", "www.xstarwake.org", "www-xstarwake-org.glitch.me", "localhost"], 
+    }; 
+    var SpaceMagesStream = new Twitch.Player("SpaceMages-twitch-embed", options);
+    SpaceMagesStream.addEventListener(Twitch.Player.READY, initiate)
+    function initiate() {
+      SpaceMagesStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
+      SpaceMagesStream.addEventListener(Twitch.Player.OFFLINE, handleOffline);
+      SpaceMagesStream.removeEventListener(Twitch.Player.READY, initiate);
+    }
+    function handleOnline() {
+      document.getElementById("SpaceMages-twitch-embed").classList.remove('hide');
+      SpaceMagesStream.removeEventListener(Twitch.Player.ONLINE, handleOnline);
+      SpaceMagesStream.addEventListener(Twitch.Player.OFFLINE, handleOffline);
+      SpaceMagesStream.setMuted(false);
+    }
+    function handleOffline() {
+      document.getElementById("SpaceMages-twitch-embed").classList.add('hide');
+      SpaceMagesStream.removeEventListener(Twitch.Player.OFFLINE, handleOffline);
+      SpaceMagesStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
+      SpaceMagesStream.setMuted(true);
+    }
+  </script>
+
+    
+<!╌ ╌>
+<!╌ CHEFDUCKIE GO-LIVE CODE ╌>
+<!╌ ╌>
     <script type="text/javascript">
     var options = {
       width: 400,
@@ -50,33 +167,27 @@
       layout: "video-with-chat",
       theme: "dark",
       parent: ["glitch.com", "xstarwake.org", "www.xstarwake.org", "www-xstarwake-org.glitch.me", "localhost"], 
-    };
-        
+    }; 
     var ChefDuckieStream = new Twitch.Player("ChefDuckie-twitch-embed", options);
-
     ChefDuckieStream.addEventListener(Twitch.Player.READY, initiate)
-
     function initiate() {
       ChefDuckieStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
       ChefDuckieStream.addEventListener(Twitch.Player.OFFLINE, handleOffline);
       ChefDuckieStream.removeEventListener(Twitch.Player.READY, initiate);
     }
-
     function handleOnline() {
       document.getElementById("ChefDuckie-twitch-embed").classList.remove('hide');
       ChefDuckieStream.removeEventListener(Twitch.Player.ONLINE, handleOnline);
       ChefDuckieStream.addEventListener(Twitch.Player.OFFLINE, handleOffline);
       ChefDuckieStream.setMuted(false);
     }
-
     function handleOffline() {
       document.getElementById("ChefDuckie-twitch-embed").classList.add('hide');
       ChefDuckieStream.removeEventListener(Twitch.Player.OFFLINE, handleOffline);
       ChefDuckieStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
       ChefDuckieStream.setMuted(true);
     }
-  </script>  
-  
+  </script>
     
   </body>
 </html>
