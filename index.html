@@ -2,7 +2,11 @@
   <body>
 
     <div id="twitch-embed"></div>
-
+    <script>
+    if (location.protocol != 'https:') {
+     location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+    }
+    </script>
 
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
 
