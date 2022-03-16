@@ -4,7 +4,6 @@
   <style>
     .hide { display:none; }
 
-    /* Optional: The following css just makes sure the twitch video stays responsive */
     #twitch {
       position: relative;
       padding-bottom: 56.25%; /* 16:9 */
@@ -30,9 +29,6 @@
      
         <script src="https://embed.twitch.tv/embed/v1.js"></script> 
 
-<!╌ ╌>
-<!╌ ╌>
-
 <div id="XStarWake-twitch-embed"></div>
 <div id="ToxicSalt-twitch-embed"></div>
 <div id="SpaceMages-twitch-embed"></div>
@@ -43,20 +39,13 @@
 <div id="Kelling101-twitch-embed"></div>
 <div id="LKwilli-twitch-embed"></div>
 <div id="MarianneWray-twitch-embed"></div>
+<div id="MarianneWray"></div>
 <div id="MiniDevil69-twitch-embed"></div>
 <div id="ToastyThaBrave-twitch-embed"></div>
 <div id="ShadowDanyelle-twitch-embed"></div>
 <div id="SKSGodOfGames-twitch-embed"></div>
-
-<!╌ ╌>
-<!╌ ╌>
   
 
-<!╌ ╌>
-<!╌ XSTARWAKE GO-LIVE CODE ╌>
-<!╌ ╌>
-
-    
     <script type="text/javascript">
     var options = {
       width: 400,
@@ -87,10 +76,6 @@
     }
   </script>
 
-    
-<!╌ ╌>
-<!╌ TOXICSALT GO-LIVE CODE ╌>
-<!╌ ╌>
     <script type="text/javascript">
     var options = {
       width: 400,
@@ -121,10 +106,6 @@
     }
   </script>
 
-    
-<!╌ ╌>
-<!╌ SPACEMAGES GO-LIVE CODE ╌>
-<!╌ ╌>
     <script type="text/javascript">
     var options = {
       width: 400,
@@ -155,10 +136,6 @@
     }
   </script>
 
-    
-<!╌ ╌>
-<!╌ CHEFDUCKIE GO-LIVE CODE ╌>
-<!╌ ╌>
     <script type="text/javascript">
     var options = {
       width: 400,
@@ -188,6 +165,40 @@
       ChefDuckieStream.setMuted(true);
     }
   </script>
+
+    <script type="text/javascript">
+    var options = {
+      width: 400,
+      height: 480,
+      channel: "MarianneWray",
+      layout: "video-with-chat",
+      theme: "dark",
+      parent: ["glitch.com", "xstarwake.org", "www.xstarwake.org", "www-xstarwake-org.glitch.me", "localhost"], 
+    }; 
+    var MarianneWrayStream = new Twitch.Player("MarianneWray", options);
+    MarianneWrayStream.addEventListener(Twitch.Player.READY, initiate)
+    function initiate() {
+      MarianneWrayStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
+      MarianneWrayStream.addEventListener(Twitch.Player.OFFLINE, handleOffline);
+      MarianneWrayStream.removeEventListener(Twitch.Player.READY, initiate);
+    }
+    function handleOnline() {
+      document.getElementById("MarianneWray").classList.remove('hide');
+      MarianneWrayStream.removeEventListener(Twitch.Player.ONLINE, handleOnline);
+      MarianneWrayStream.addEventListener(Twitch.Player.OFFLINE, handleOffline);
+      MarianneWrayStream.setMuted(false);
+    }
+    function handleOffline() {
+      document.getElementById("MarianneWray").classList.add('hide');
+      MarianneWrayStream.removeEventListener(Twitch.Player.OFFLINE, handleOffline);
+      MarianneWrayStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
+      MarianneWrayStream.setMuted(true);
+    }
+  </script>    
+    
+    
+    
+    
     
   </body>
 </html>
