@@ -33,21 +33,11 @@
 <div id="ToxicSalt-twitch-embed"></div>
 <div id="SpaceMages-twitch-embed"></div>
 <div id="ChefDuckie-twitch-embed"></div>
-<div id="DeadInTheScene-twitch-embed"></div>
-<div id="DoubleKnees-twitch-embed"></div>
-<div id="FearsomeBeard-twitch-embed"></div>
-<div id="Kelling101-twitch-embed"></div>
-<div id="LKwilli-twitch-embed"></div>
-<div id="MarianneWray-twitch-embed"></div>
+<div id="twitch-embed"></div>
 <div id="MarianneWray"></div>
-<div id="MiniDevil69-twitch-embed"></div>
-<div id="ToastyThaBrave-twitch-embed"></div>
-<div id="ShadowDanyelle-twitch-embed"></div>
-<div id="SKSGodOfGames-twitch-embed"></div>
-  
 
     <script type="text/javascript">
-    var options = {
+    var XStarWakeoptions = {
       width: 400,
       height: 480,
       channel: "XStarWake",
@@ -55,7 +45,7 @@
       theme: "dark",
       parent: ["glitch.com", "xstarwake.org", "www.xstarwake.org", "www-xstarwake-org.glitch.me", "localhost"], 
     };
-    var XStarWakeStream = new Twitch.Player("XStarWake-twitch-embed", options);
+    var XStarWakeStream = new Twitch.Player("XStarWake-twitch-embed", XStarWakeoptions);
     XStarWakeStream.addEventListener(Twitch.Player.READY, initiate)
     function initiate() {
       XStarWakeStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
@@ -167,7 +157,7 @@
   </script>
 
     <script type="text/javascript">
-    var options = {
+    var MarianneWrayoptions = {
       width: 400,
       height: 480,
       channel: "MarianneWray",
@@ -175,7 +165,7 @@
       theme: "dark",
       parent: ["glitch.com", "xstarwake.org", "www.xstarwake.org", "www-xstarwake-org.glitch.me", "localhost"], 
     }; 
-    var MarianneWrayStream = new Twitch.Player("MarianneWray", options);
+    var MarianneWrayStream = new Twitch.Player("MarianneWray", MarianneWrayoptions);
     MarianneWrayStream.addEventListener(Twitch.Player.READY, initiate)
     function initiate() {
       MarianneWrayStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
@@ -196,7 +186,35 @@
     }
   </script>    
     
-    
+        <script type="text/javascript">
+    var options = {
+      width: 400,
+      height: 480,
+      channel: "DoubleKnees",
+      layout: "video-with-chat",
+      theme: "dark",
+      parent: ["glitch.com", "xstarwake.org", "www.xstarwake.org", "www-xstarwake-org.glitch.me", "localhost"], 
+    }; 
+    var DoubleKneesStream = new Twitch.Player("twitch-embed", options);
+    DoubleKneesStream.addEventListener(Twitch.Player.READY, initiate)
+    function initiate() {
+      DoubleKneesStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
+      DoubleKneesStream.addEventListener(Twitch.Player.OFFLINE, handleOffline);
+      DoubleKneesStream.removeEventListener(Twitch.Player.READY, initiate);
+    }
+    function handleOnline() {
+      document.getElementById("twitch-embed").classList.remove('hide');
+      DoubleKneesStream.removeEventListener(Twitch.Player.ONLINE, handleOnline);
+      DoubleKneesStream.addEventListener(Twitch.Player.OFFLINE, handleOffline);
+      DoubleKneesStream.setMuted(false);
+    }
+    function handleOffline() {
+      document.getElementById("twitch-embed").classList.add('hide');
+      DoubleKneesStream.removeEventListener(Twitch.Player.OFFLINE, handleOffline);
+      DoubleKneesStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
+      DoubleKneesStream.setMuted(true);
+    }
+  </script>
     
     
     
