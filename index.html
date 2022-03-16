@@ -1,9 +1,6 @@
 <html>
   <head>
   <style>
-    .hide { display:none; }
-
-    /* Optional: The following css just makes sure the twitch video stays responsive */
     #twitch {
       position: relative;
       padding-bottom: 56.25%; /* 16:9 */
@@ -21,6 +18,12 @@
 </head>
   
   <body>
+    
+  <style>
+    .hide {display:none;}
+    .hidden {display: none;}
+    </style>   
+    
     <script>
     if (location.protocol != 'https:') {
      location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
@@ -32,26 +35,17 @@
    
 
 
-<!╌ ╌>
-<!╌ ╌>
-
 <div id="XStarWake-twitch-embed"></div>
 <div id="ToxicSalt-twitch-embed"></div>
 <div id="SpaceMages-twitch-embed"></div>
 <div id="ChefDuckie-twitch-embed"></div>
-<div id="DeadInTheScene-twitch-embed"></div>
 <div id="DoubleKnees-twitch-embed"></div>
-<div id="FearsomeBeard-twitch-embed"></div>
-<div id="Kelling101-twitch-embed"></div>
-<div id="LKwilli-twitch-embed"></div>
 <div id="MarianneWray-twitch-embed"></div>
 <div id="MiniDevil69-twitch-embed"></div>
 <div id="ToastyThaBrave-twitch-embed"></div>
 <div id="ShadowDanyelle-twitch-embed"></div>
 <div id="SKSGodOfGames-twitch-embed"></div>
 
-<!╌ ╌>
-<!╌ ╌>
 
 
 
@@ -75,13 +69,13 @@
       XStarWakeStream.removeEventListener(Twitch.Player.READY, initiate);
     }
     function handleOnline() {
-      document.getElementById("XStarWake-twitch-embed").classList.remove('hide');
+      document.getElementById("XStarWake-twitch-embed").classList.remove('hidden');
       XStarWakeStream.removeEventListener(Twitch.Player.ONLINE, handleOnline);
       XStarWakeStream.addEventListener(Twitch.Player.OFFLINE, handleOffline);
       XStarWakeStream.setMuted(false);
     }
     function handleOffline() {
-      document.getElementById("XStarWake-twitch-embed").classList.add('hide');
+      document.getElementById("XStarWake-twitch-embed").classList.add('hidden');
       XStarWakeStream.removeEventListener(Twitch.Player.OFFLINE, handleOffline);
       XStarWakeStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
       XStarWakeStream.setMuted(true);
