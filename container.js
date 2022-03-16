@@ -1,38 +1,27 @@
-const EMBED_URL = 'https://embed.twitch.tv/embed/v1.js';
+<html>
+  <body>
 
-class Hello extends React.Component {
-  componentDidMount() {
-    let embed;
-    const script = document.createElement('script');
-    script.setAttribute(
-      'src',
-      EMBED_URL
-    );
-    script.addEventListener('load', () => {
-      embed = new window.Twitch.Embed(this.props.targetID, { ...this.props });
-    });
-    document.body.appendChild(script);
-  }
+    <div id="twitch-embed"></div>
 
-  render() {
 
-    return (
-      <div>
-        Hello {this.props.channel} {this.props.targetID} {this.props.width} {this.props.height}
-        <div id={this.props.targetID}></div>
-      </div>
-    )
-  }
-}
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
 
-Hello.defaultProps = {
-  targetID: 'twitch-embed',
-  width: '940',
-  height: '480',
-  channel: 'monstercat',
-}
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        channel: "Proto_Peach",
+        // Only needed if this page is going to be embedded on other websites
+        parent: ["embed.example.com", "othersite.example.com"]
+      });
+    </script>
+<iframe
+    src="https://player.twitch.tv/?Proto_Peach&parent=streamernews.example.com"
+    height="<height>"
+    width="<width>"
+    allowfullscreen="<allowfullscreen>">
+</iframe>
 
-ReactDOM.render(
-  <Hello />,
-  document.getElementById('container')
-);
+
+  </body>
+</html>

@@ -1,7 +1,28 @@
 <html>
   <body>
-    <div id="container">
+
+    <div id="twitch-embed"></div>
+
+
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        channel: "Proto_Peach",
+        parent: ["xstarwake.org", "www.xstarwake.org", "www-xstarwake-org.glitch.me", "localhost"]
+      });
+    </script>
     
-    </div>
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        channel: "ChefDuckie",
+        parent: ["xstarwake.org", "www.xstarwake.org", "www-xstarwake-org.glitch.me", "localhost"]
+      });
+    </script>
+    
   </body>
 </html>
