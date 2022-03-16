@@ -22,56 +22,27 @@
 </head>
   
   <body>
-    <div id="twitch-embed"></div>  
-    <div id="twitch-embed"></div>  
-    <script>
-    if (location.protocol != 'https:') {
-     location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-    }
-    </script>
+        <script>
+          if (location.protocol != 'https:') {
+            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            }
+        </script>
      
-    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+        <script src="https://embed.twitch.tv/embed/v1.js"></script> 
 
+    
+    
+    
+    
+    <div id="ChefDuckie-twitch-embed"></div>  
+    
+    
+    
+    
+
+    
+    
     <script type="text/javascript">
-    var options = {
-      width: 400,
-      height: 480,
-      channel: "Vinc3ntvega",
-      layout: "video-with-chat",
-      theme: "dark",
-      parent: ["glitch.com", "xstarwake.org", "www.xstarwake.org", "www-xstarwake-org.glitch.me", "localhost"], 
-    };
-        
-    var Vinc3ntvegaStream = new Twitch.Player("twitch-embed", options);
-
-    Vinc3ntvegaStream.addEventListener(Twitch.Player.READY, initiate)
-
-    function initiate() {
-      Vinc3ntvegaStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
-      Vinc3ntvegaStream.addEventListener(Twitch.Player.OFFLINE, handleOffline);
-      Vinc3ntvegaStream.removeEventListener(Twitch.Player.READY, initiate);
-    }
-
-    function handleOnline() {
-      document.getElementById("twitch-embed").classList.remove('hide');
-      Vinc3ntvegaStream.removeEventListener(Twitch.Player.ONLINE, handleOnline);
-      Vinc3ntvegaStream.addEventListener(Twitch.Player.OFFLINE, handleOffline);
-      Vinc3ntvegaStream.setMuted(false);
-    }
-
-    function handleOffline() {
-      document.getElementById("twitch-embed").classList.add('hide');
-      Vinc3ntvegaStream.removeEventListener(Twitch.Player.OFFLINE, handleOffline);
-      Vinc3ntvegaStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
-      Vinc3ntvegaStream.setMuted(true);
-    }
-  </script>    
-    
-  
-    
-    
-    
-        <script type="text/javascript">
     var options = {
       width: 400,
       height: 480,
@@ -81,7 +52,7 @@
       parent: ["glitch.com", "xstarwake.org", "www.xstarwake.org", "www-xstarwake-org.glitch.me", "localhost"], 
     };
         
-    var ChefDuckieStream = new Twitch.Player("twitch-embed", options);
+    var ChefDuckieStream = new Twitch.Player("ChefDuckie-twitch-embed", options);
 
     ChefDuckieStream.addEventListener(Twitch.Player.READY, initiate)
 
@@ -92,57 +63,20 @@
     }
 
     function handleOnline() {
-      document.getElementById("twitch-embed").classList.remove('hide');
+      document.getElementById("ChefDuckie-twitch-embed").classList.remove('hide');
       ChefDuckieStream.removeEventListener(Twitch.Player.ONLINE, handleOnline);
       ChefDuckieStream.addEventListener(Twitch.Player.OFFLINE, handleOffline);
       ChefDuckieStream.setMuted(false);
     }
 
     function handleOffline() {
-      document.getElementById("twitch-embed").classList.add('hide');
+      document.getElementById("ChefDuckie-twitch-embed").classList.add('hide');
       ChefDuckieStream.removeEventListener(Twitch.Player.OFFLINE, handleOffline);
       ChefDuckieStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
       ChefDuckieStream.setMuted(true);
     }
-  </script> 
-    
-    
-    
-    
-    
-     
-    
-    <script type="text/javascript">
-      new Twitch.Embed("twitch-embed", {
-        width: 400,
-        height: 480,
-        channel: "Proto_Peach",
-        layout: "video-with-chat",
-        theme: "dark",
-        parent: ["glitch.com", "xstarwake.org", "www.xstarwake.org", "www-xstarwake-org.glitch.me", "localhost"],
-      });
-    </script>
-    
-    <script type="text/javascript">
-      new Twitch.Embed("twitch-embed", {
-        width: 400,
-        height: 480,
-        channel: "MarianneWray",
-        layout: "video-with-chat",
-        theme: "dark",
-        parent: ["glitch.com", "xstarwake.org", "www.xstarwake.org", "www-xstarwake-org.glitch.me", "localhost"],
-      });
-    </script>
-        <script type="text/javascript">
-      new Twitch.Embed("twitch-embed", {
-        width: 400,
-        height: 480,
-        channel: "LKWilli",
-        layout: "video-with-chat",
-        theme: "dark",
-        parent: ["glitch.com", "xstarwake.org", "www.xstarwake.org", "www-xstarwake-org.glitch.me", "localhost"],
-      });
-    </script>
+  </script>  
+  
     
   </body>
 </html>
