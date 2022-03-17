@@ -74,8 +74,8 @@
     <script>
     var Annaomalyoptions = {
       channel: "Annaomaly",
-      height: 580,
-      width: 400,
+        width: 854,
+        height: 480,
       layout: "video-with-chat",
       theme: "dark",
       parent: ["glitch.com", "xstarwake.org", "www.xstarwake.org", "www-xstarwake-org.glitch.me", "localhost"], 
@@ -103,7 +103,23 @@
   </script>
     
  
-    
+        <div id="twitch-embed"></div>
+
+
+    <script type="text/javascript">
+      var embed = new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        channel: "AdmiralBahroo",
+        layout: "video-with-chat",
+        parent: ["glitch.com", "xstarwake.org", "www.xstarwake.org", "www-xstarwake-org.glitch.me", "localhost"], 
+      });
+
+      embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+        var player = embed.getPlayer();
+        player.play();
+      });
+    </script>
   
     
 
