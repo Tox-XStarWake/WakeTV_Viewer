@@ -32,41 +32,71 @@
     </script>
 
 
+    <script src="https://embed.twitch.tv/embed/v1.js" type="text/javascript"></script>
     
+    
+    
+    <div id="XStarWake-twitch-embed"></div>  
+    <script>
+    var XStarWakeoptions = {
+      width: 400,
+      height: 480,
+      channel: "XStarWake",
+      layout: "video-with-chat",
+      theme: "dark",
+      parent: ["glitch.com", "xstarwake.org", "www.xstarwake.org", "www-xstarwake-org.glitch.me", "localhost"], 
+    };
+    var XStarWakeStream = new Twitch.Player("XStarWake-twitch-embed", XStarWakeoptions);
+    XStarWakeStream.addEventListener(Twitch.Player.READY, XStarWakeinitiate)
+    function XStarWakeinitiate() {
+      XStarWakeStream.addEventListener(Twitch.Player.ONLINE, XStarWakehandleOnline);
+      XStarWakeStream.addEventListener(Twitch.Player.OFFLINE, XStarWakehandleOffline);
+      XStarWakeStream.removeEventListener(Twitch.Player.READY, XStarWakeinitiate);
+    }
+    function XStarWakehandleOnline() {
+      document.getElementById("XStarWake-twitch-embed").classList.remove('hidden');
+      XStarWakeStream.removeEventListener(Twitch.Player.ONLINE, XStarWakehandleOnline);
+      XStarWakeStream.addEventListener(Twitch.Player.OFFLINE, XStarWakehandleOffline);
+      XStarWakeStream.setMuted(false);
+    }
+    function XStarWakehandleOffline() {
+      document.getElementById("XStarWake-twitch-embed").classList.add('hidden');
+      XStarWakeStream.removeEventListener(Twitch.Player.OFFLINE, XStarWakehandleOffline);
+      XStarWakeStream.addEventListener(Twitch.Player.ONLINE, XStarWakehandleOnline);
+      XStarWakeStream.setMuted(true);
+    }
+  </script> 
     
     
     
     
     <div id="Annaomaly-twitch-embed"></div>  
-
-
-    <script src="https://embed.twitch.tv/embed/v1.js" type="text/javascript"> </script>
     <script>
-    var options = {
-      width: 400,
-      height: 480,
+    var Annaomalyoptions = {
       channel: "Annaomaly",
+      height: 580,
+      width: 400,
       layout: "video-with-chat",
       theme: "dark",
       parent: ["glitch.com", "xstarwake.org", "www.xstarwake.org", "www-xstarwake-org.glitch.me", "localhost"], 
     };
-    var AnnaomalyStream = new Twitch.Player("Annaomaly-twitch-embed", options);
-    AnnaomalyStream.addEventListener(Twitch.Player.READY, initiate)
-    function initiate() {
-      AnnaomalyStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
-      AnnaomalyStream.addEventListener(Twitch.Player.OFFLINE, handleOffline);
-      AnnaomalyStream.removeEventListener(Twitch.Player.READY, initiate);
+    var AnnaomalyStream = new Twitch.Player("Annaomaly-twitch-embed", Annaomalyoptions);
+    AnnaomalyStream.addEventListener(Twitch.Player.READY, Annaomalyinitiate)
+    function Annaomalyinitiate() {
+      AnnaomalyStream.addEventListener(Twitch.Player.ONLINE, AnnaomalyhandleOnline);
+      AnnaomalyStream.addEventListener(Twitch.Player.OFFLINE, AnnaomalyhandleOffline);
+      AnnaomalyStream.removeEventListener(Twitch.Player.READY, Annaomalyinitiate);
     }
-    function handleOnline() {
+    function AnnaomalyhandleOnline() {
       document.getElementById("Annaomaly-twitch-embed").classList.remove('hidden');
-      AnnaomalyStream.removeEventListener(Twitch.Player.ONLINE, handleOnline);
-      AnnaomalyStream.addEventListener(Twitch.Player.OFFLINE, handleOffline);
+      AnnaomalyStream.removeEventListener(Twitch.Player.ONLINE, AnnaomalyhandleOnline);
+      AnnaomalyStream.addEventListener(Twitch.Player.OFFLINE, AnnaomalyhandleOffline);
       AnnaomalyStream.setMuted(false);
     }
-    function handleOffline() {
+    function AnnaomalyhandleOffline() {
       document.getElementById("Annaomaly-twitch-embed").classList.add('hidden');
-      AnnaomalyStream.removeEventListener(Twitch.Player.OFFLINE, handleOffline);
-      AnnaomalyStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
+      AnnaomalyStream.removeEventListener(Twitch.Player.OFFLINE, AnnaomalyhandleOffline);
+      AnnaomalyStream.addEventListener(Twitch.Player.ONLINE, AnnaomalyhandleOnline);
       AnnaomalyStream.setMuted(true);
     }
 
