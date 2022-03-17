@@ -83,20 +83,20 @@
     var AnnaomalyStream = new Twitch.Player("Annaomaly-twitch-embed", Annaomalyoptions);
     AnnaomalyStream.addEventListener(Twitch.Player.READY, Annaomalyinitiate)
     function Annaomalyinitiate() {
-      AnnaomalyStream.addEventListener(Twitch.Embed.VIDEO_READY, AnnaomalyhandleOnline);
-      AnnaomalyStream.addEventListener(Twitch.Embed.VIDEO_READY, AnnaomalyhandleOffline);
-      AnnaomalyStream.removeEventListener(Twitch.Embed.VIDEO_READY, Annaomalyinitiate);
+      AnnaomalyStream.addEventListener(Twitch.Player.ONLINE, AnnaomalyhandleOnline);
+      AnnaomalyStream.addEventListener(Twitch.Player.OFFLINE, AnnaomalyhandleOffline);
+      AnnaomalyStream.removeEventListener(Twitch.Player.READY, Annaomalyinitiate);
     }
     function AnnaomalyhandleOnline() {
       document.getElementById("Annaomaly-twitch-embed").classList.remove('hidden');
-      AnnaomalyStream.removeEventListener(Twitch.Embed.VIDEO_READY, AnnaomalyhandleOnline);
-      AnnaomalyStream.addEventListener(Twitch.Embed.VIDEO_READY, AnnaomalyhandleOffline);
+      AnnaomalyStream.removeEventListener(Twitch.Player.ONLINE, AnnaomalyhandleOnline);
+      AnnaomalyStream.addEventListener(Twitch.Player.OFFLINE, AnnaomalyhandleOffline);
       AnnaomalyStream.setMuted(false);
     }
     function AnnaomalyhandleOffline() {
       document.getElementById("Annaomaly-twitch-embed").classList.add('hidden');
-      AnnaomalyStream.removeEventListener(Twitch.Embed.VIDEO_READY, AnnaomalyhandleOffline);
-      AnnaomalyStream.addEventListener(Twitch.Embed.VIDEO_READY, AnnaomalyhandleOnline);
+      AnnaomalyStream.removeEventListener(Twitch.Player.OFFLINE, AnnaomalyhandleOffline);
+      AnnaomalyStream.addEventListener(Twitch.Player.ONLINE, AnnaomalyhandleOnline);
       AnnaomalyStream.setMuted(true);
     }
 
