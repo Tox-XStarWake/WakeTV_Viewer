@@ -37,13 +37,11 @@
     
     
     
-    
-
-
-    <script defer src="https://embed.twitch.tv/embed/v1.js" type="text/javascript"></script>
     <div id="Annaomaly-twitch-embed"></div>  
-    <script defer>
 
+
+    <script src="https://embed.twitch.tv/embed/v1.js" type="text/javascript"> </script>
+    <script>
     var options = {
       width: 400,
       height: 480,
@@ -76,41 +74,7 @@
     
  
     
-    
-    
-    <div id="XStarWake-twitch-embed"></div>  
-    <script defer>
-    var options = {
-      width: 400,
-      height: 480,
-      channel: "XStarWake",
-      layout: "video-with-chat",
-      theme: "dark",
-      parent: ["glitch.com", "xstarwake.org", "www.xstarwake.org", "www-xstarwake-org.glitch.me", "localhost"], 
-    };
-    var XStarWakeStream = new Twitch.Player("XStarWake-twitch-embed", options);
-    XStarWakeStream.addEventListener(Twitch.Player.READY, initiate)
-    function initiate() {
-      XStarWakeStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
-      XStarWakeStream.addEventListener(Twitch.Player.OFFLINE, handleOffline);
-      XStarWakeStream.removeEventListener(Twitch.Player.READY, initiate);
-    }
-    function handleOnline() {
-      document.getElementById("XStarWake-twitch-embed").classList.remove('hidden');
-      XStarWakeStream.removeEventListener(Twitch.Player.ONLINE, handleOnline);
-      XStarWakeStream.addEventListener(Twitch.Player.OFFLINE, handleOffline);
-      XStarWakeStream.setMuted(false);
-    }
-    function handleOffline() {
-      document.getElementById("XStarWake-twitch-embed").classList.add('hidden');
-      XStarWakeStream.removeEventListener(Twitch.Player.OFFLINE, handleOffline);
-      XStarWakeStream.addEventListener(Twitch.Player.ONLINE, handleOnline);
-      XStarWakeStream.setMuted(true);
-    }
-  </script> 
-    
-    
-    
+  
     
 
   </body>
