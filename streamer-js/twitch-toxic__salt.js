@@ -191,7 +191,11 @@ export class TwitchStreamToxic__Salt extends HTMLElement {
 
   static get template() {
     const template = document.createElement("template");
+    
     template.innerHTML = `<div id="twitch-toxic__salt-embed"></div>`;
+    
+    template.innerHTML.classList.add("hidden");
+    
     return template;
   }
 
