@@ -38,13 +38,16 @@
         display: flex;
       }
 
+      .container-parent {
+        width: 200px;
+      }
+
       .flex-child {
-        flex: 1;
-        border: 2px solid yellow;
+        flex-grow: 1;
       }
 
       .flex-child:first-child {
-        margin-right: 20px;
+        flex-grow: 1;
       }
     </style>
 
@@ -52,51 +55,41 @@
       type="module"
       src="https://www.xstarwake.org/twitch-xstarwake.js"
     ></script>
+    <script
+      type="module"
+      src="https://www.xstarwake.org/twitch-toxic__salt.js"
+    ></script>
     <script type="module" src="https://unpkg.com/twitch-stream-embed"></script>
 
-    <div class="flex-container">
-
-  <div class="flex-child xstarwake">
     
     
-    <twitch-xstarwake
-      width="25%"
-      channel="summit1g"
-      muted
-      chat
-      playing
-    ></twitch-xstarwake>
+    
+        <div class="flex-container">
+                  <div class="container-parent">
+    <div class="block-container">
+      <twitch-xstarwake
+        width="40%"
+        channel="summit1g"
+        muted
+        chat
+        playing
+      ></twitch-xstarwake>
 
+      <twitch-toxic__salt
+        width="40%"
+        channel="xQcOW"
+        muted
+        chat
+        playing
+      ></twitch-toxic__salt>
+
+      <twitch-stream
+        width="40%"
+        channel="Vinc3ntvega"
+        muted
+        chat
+        playing
+      ></twitch-stream>
     </div>
-  
-        <div class="flex-child toxic__salt">
-    
-    
-    <twitch-toxic__salt
-      width="25%"
-      channel="summit1g"
-      muted
-      chat
-      playing
-    ></twitch-toxic__salt>
-
-    </div>
-      
-      
-  <div class="flex-child default">
-    
-    
-    <twitch-stream
-      width="25%"
-      channel="Vinc3ntvega"
-      muted
-      chat
-      playing
-    ></twitch-stream>
-    
-     </div>
-  
-</div>
-    
   </body>
 </html>
