@@ -1,4 +1,4 @@
-export class TwitchStream extends HTMLElement {
+export class TwitchStreamXStarwake extends HTMLElement {
     static TWITCH_EMBED_URL = 'https://embed.twitch.tv/embed/v1.js';
     static get attributes() {
         return {
@@ -10,13 +10,7 @@ export class TwitchStream extends HTMLElement {
             autoplay: { default: true },
             chat: { default: false },
             allowfullscreen: { default: true },
-            parent: { default: '
-            "glitch.com",
-            "xstarwake.org",
-            "www.xstarwake.org",
-            "www-xstarwake-org.glitch.me",
-            "localhost",
-          ' },
+            parent: { default: '' },
         };
     }
 
@@ -91,7 +85,7 @@ export class TwitchStream extends HTMLElement {
             await this.importTwitch();
         }
         await this.newFrame();
-        let embedElem = this.shadowRoot.querySelector('#twitch-embed');
+        let embedElem = this.shadowRoot.querySelector('#twitch-xstarwake-embed');
         const embed = new Twitch.Embed(embedElem, {
             width: this.width,
             height: this.height,
@@ -111,11 +105,11 @@ export class TwitchStream extends HTMLElement {
 
     _setEmbedListeners() {
         this.embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
-            this.dispatchEvent(new CustomEvent('twitch-stream.video.ready', { detail: { embed: this.embed } }));
+            this.dispatchEvent(new CustomEvent('twitch-xstarwake.video.ready', { detail: { embed: this.embed } }));
         });
         this.embed.addEventListener(Twitch.Embed.VIDEO_PLAY, sessionId => {
             this.dispatchEvent(
-                new CustomEvent('twitch-stream.video.play', { detail: { embed: this.embed, sessionId } }),
+                new CustomEvent('twitch-xstarwake.video.play', { detail: { embed: this.embed, sessionId } }),
             );
         });
         // Set all the callback events in a loop since we are just exposing them and no extra
@@ -125,7 +119,7 @@ export class TwitchStream extends HTMLElement {
             this.embed.addEventListener(Twitch.Player[ev], async () => {
                 await this._handlePlayingState(ev);
                 this.dispatchEvent(
-                    new CustomEvent(`twitch-stream.${ev.toLowerCase()}`, { detail: { embed: this.embed } }),
+                    new CustomEvent(`twitch-xstarwake.${ev.toLowerCase()}`, { detail: { embed: this.embed } }),
                 );
             });
         });
@@ -162,7 +156,7 @@ export class TwitchStream extends HTMLElement {
     importTwitch() {
         return new Promise((resolve, reject) => {
             const script = document.createElement('script');
-            script.src = TwitchStream.TWITCH_EMBED_URL;
+            script.src = TwitchStreamXStarwake.TWITCH_EMBED_URL;
             document.head.appendChild(script);
 
             script.onload = resolve;
@@ -171,19 +165,19 @@ export class TwitchStream extends HTMLElement {
     }
 
     render() {
-        const content = TwitchStream.template.content.cloneNode(true);
+        const content = TwitchStreamXStarwake.template.content.cloneNode(true);
         this.shadowRoot.innerHTML = '';
         this.shadowRoot.appendChild(content);
     }
 
     static get template() {
         const template = document.createElement('template');
-        template.innerHTML = `<div id="twitch-embed" style="height: 100%"></div>`;
+        template.innerHTML = `<div id="twitch-xstarwake-embed" style="height: 100%"></div>`;
         return template;
     }
 
     setDefaults() {
-        const attributes = TwitchStream.attributes;
+        const attributes = TwitchStreamXStarwake.attributes;
         Object.keys(attributes).forEach(attr => {
             if (!this[attr]) {
                 this[attr] = attributes[attr].default;
@@ -201,13 +195,15 @@ export class TwitchStream extends HTMLElement {
     }
 
     static get observedAttributes() {
-        const attributes = TwitchStream.attributes;
+        const attributes = TwitchStreamXStarwake.attributes;
         return Object.keys(attributes).filter(attr => {
             return typeof attributes[attr].watch === 'undefined' || attributes[attr].watch;
         });
     }
 }
 
-if (!customElements.get('twitch-stream')) {
-    customElements.define('twitch-stream', TwitchStream);
+if (!customElements.get('twitch-xstarwake')) {
+    customElements.define('twitch-xstarwake', TwitchStreamXStarwake);
 }
+
+
