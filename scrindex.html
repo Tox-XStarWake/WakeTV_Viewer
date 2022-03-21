@@ -6,37 +6,55 @@
     <link
       rel="shortcut icon"
       href="https://cdn.glitch.global/3f4f1bc7-b447-46a4-ad7d-8fd9372b73c5/WakeTV_icon.ico?v=1647560803934"
-          />
-
-  
+    />
   </head>
 
   <body>
+    <style>
+      .hide {
+        display: none;
+      }
+      .hidden {
+        display: none;
+      }
 
-<script type="module" src="https://www.xstarwake.org/twitch-xstarwake.js"></script>
-<script type="module" src="https://unpkg.com/twitch-stream-embed"></script>
+      #container {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-image: url(https://cdn.glitch.global/3f4f1bc7-b447-46a4-ad7d-8fd9372b73c5/Patreon_BG.jpg?v=1647736562026);
+        background-repeat: repeat-y;
+        background-size: 100%;
+        background-position: center center;
 
+        transition: all 0.3s ease;
 
+        border-bottom: 5px solid #852729;
+        box-shadow: 0px 0px 18px 5px #333;
+      }
+    </style>
 
+    <script
+      type="module"
+      src="https://www.xstarwake.org/twitch-xstarwake.js"
+    ></script>
+    <script type="module" src="https://unpkg.com/twitch-stream-embed"></script>
 
+    <twitch-stream
+      width="100%"
+      channel="Vinc3ntvega"
+      muted
+      chat
+      playing
+    ></twitch-stream>
 
-
-
-
-
-<twitch-stream width="100%" channel="Vinc3ntvega" muted chat playing></twitch-stream>
-
-<twitch-xstarwake width="100%" channel="summit1g" muted chat playing></twitch-xstarwake>
-
-
+    <twitch-xstarwake
+      width="100%"
+      channel="summit1g"
+      muted
+      chat
+      playing
+    ></twitch-xstarwake>
   </body>
-
 </html>
-
-
-
-
-
-
-
-
