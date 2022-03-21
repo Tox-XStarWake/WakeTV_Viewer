@@ -172,7 +172,7 @@ export class TwitchStreamXStarwake extends HTMLElement {
 
     static get template() {
         const template = document.createElement('template');
-        template.innerHTML = `<div id="twitch-xstarwake-embed" style="height: 100%"></div>`;
+        template.innerHTML = `<div id="twitch-xstarwake-embed"></div>`;
         return template;
     }
 
