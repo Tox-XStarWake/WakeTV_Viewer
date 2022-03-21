@@ -33,6 +33,19 @@
         border-bottom: 5px solid #852729;
         box-shadow: 0px 0px 18px 5px #333;
       }
+
+      .flex-container {
+        display: flex;
+      }
+
+      .flex-child {
+        flex: 1;
+        border: 2px solid yellow;
+      }
+
+      .flex-child:first-child {
+        margin-right: 20px;
+      }
     </style>
 
     <script
@@ -41,24 +54,35 @@
     ></script>
     <script type="module" src="https://unpkg.com/twitch-stream-embed"></script>
 
-        <twitch-xstarwake
-      width="40%"
+    <div class="flex-container">
+
+  <div class="flex-child xstarwake">
+    
+    
+    <twitch-xstarwake
+      width="25%"
       channel="summit1g"
       muted
       chat
       playing
     ></twitch-xstarwake>
-    
+
+    </div>
+  
+  <div class="flex-child default">
     
     
     <twitch-stream
-      width="40%"
+      width="25%"
       channel="Vinc3ntvega"
       muted
       chat
       playing
     ></twitch-stream>
-
-
+    
+     </div>
+  
+</div>
+    
   </body>
 </html>
