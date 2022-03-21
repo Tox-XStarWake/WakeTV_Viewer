@@ -1,4 +1,4 @@
-export class TwitchStreamXStarwake extends HTMLElement {
+export class TwitchStreamToxic__Salt extends HTMLElement {
     static TWITCH_EMBED_URL = 'https://embed.twitch.tv/embed/v1.js';
     static get attributes() {
         return {
@@ -85,7 +85,7 @@ export class TwitchStreamXStarwake extends HTMLElement {
             await this.importTwitch();
         }
         await this.newFrame();
-        let embedElem = this.shadowRoot.querySelector('#twitch-xstarwake-embed');
+        let embedElem = this.shadowRoot.querySelector('#twitch-toxic__salt-embed');
         const embed = new Twitch.Embed(embedElem, {
             width: this.width,
             height: this.height,
@@ -105,11 +105,11 @@ export class TwitchStreamXStarwake extends HTMLElement {
 
     _setEmbedListeners() {
         this.embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
-            this.dispatchEvent(new CustomEvent('twitch-xstarwake.video.ready', { detail: { embed: this.embed } }));
+            this.dispatchEvent(new CustomEvent('twitch-toxic__salt.video.ready', { detail: { embed: this.embed } }));
         });
         this.embed.addEventListener(Twitch.Embed.VIDEO_PLAY, sessionId => {
             this.dispatchEvent(
-                new CustomEvent('twitch-xstarwake.video.play', { detail: { embed: this.embed, sessionId } }),
+                new CustomEvent('twitch-toxic__salt.video.play', { detail: { embed: this.embed, sessionId } }),
             );
         });
         // Set all the callback events in a loop since we are just exposing them and no extra
@@ -119,7 +119,7 @@ export class TwitchStreamXStarwake extends HTMLElement {
             this.embed.addEventListener(Twitch.Player[ev], async () => {
                 await this._handlePlayingState(ev);
                 this.dispatchEvent(
-                    new CustomEvent(`twitch-xstarwake.${ev.toLowerCase()}`, { detail: { embed: this.embed } }),
+                    new CustomEvent(`twitch-toxic__salt.${ev.toLowerCase()}`, { detail: { embed: this.embed } }),
                 );
             });
         });
@@ -156,7 +156,7 @@ export class TwitchStreamXStarwake extends HTMLElement {
     importTwitch() {
         return new Promise((resolve, reject) => {
             const script = document.createElement('script');
-            script.src = TwitchStreamXStarwake.TWITCH_EMBED_URL;
+            script.src = TwitchStreamToxic__Salt.TWITCH_EMBED_URL;
             document.head.appendChild(script);
 
             script.onload = resolve;
@@ -165,19 +165,19 @@ export class TwitchStreamXStarwake extends HTMLElement {
     }
 
     render() {
-        const content = TwitchStreamXStarwake.template.content.cloneNode(true);
+        const content = TwitchStreamToxic__Salt.template.content.cloneNode(true);
         this.shadowRoot.innerHTML = '';
         this.shadowRoot.appendChild(content);
     }
 
     static get template() {
         const template = document.createElement('template');
-        template.innerHTML = `<div id="twitch-xstarwake-embed"></div>`;
+        template.innerHTML = `<div id="twitch-toxic__salt-embed"></div>`;
         return template;
     }
 
     setDefaults() {
-        const attributes = TwitchStreamXStarwake.attributes;
+        const attributes = TwitchStreamToxic__Salt.attributes;
         Object.keys(attributes).forEach(attr => {
             if (!this[attr]) {
                 this[attr] = attributes[attr].default;
@@ -195,15 +195,15 @@ export class TwitchStreamXStarwake extends HTMLElement {
     }
 
     static get observedAttributes() {
-        const attributes = TwitchStreamXStarwake.attributes;
+        const attributes = TwitchStreamToxic__Salt.attributes;
         return Object.keys(attributes).filter(attr => {
             return typeof attributes[attr].watch === 'undefined' || attributes[attr].watch;
         });
     }
 }
 
-if (!customElements.get('twitch-xstarwake')) {
-    customElements.define('twitch-xstarwake', TwitchStreamXStarwake);
+if (!customElements.get('twitch-toxic__salt')) {
+    customElements.define('twitch-toxic__salt', TwitchStreamToxic__Salt);
 }
 
 
