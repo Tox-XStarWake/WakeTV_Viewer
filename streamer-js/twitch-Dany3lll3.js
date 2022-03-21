@@ -87,7 +87,7 @@ export class TwitchStreamdany3lll3 extends HTMLElement {
       await this.importTwitch();
     }
     await this.newFrame();
-    let embedElem = this.shadowRoot.querySelector("#Twitch-dany3lll3-embed");
+    let embedElem = this.shadowRoot.querySelector("#twitch-dany3lll3-embed");
     const embed = new Twitch.Embed(embedElem, {
       width: this.width,
       height: this.height,
@@ -108,14 +108,14 @@ export class TwitchStreamdany3lll3 extends HTMLElement {
   _setEmbedListeners() {
     this.embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
       this.dispatchEvent(
-        new CustomEvent("Twitch-dany3lll3.video.ready", {
+        new CustomEvent("twitch-dany3lll3.video.ready", {
           detail: { embed: this.embed },
         })
       );
     });
     this.embed.addEventListener(Twitch.Embed.VIDEO_PLAY, (sessionId) => {
       this.dispatchEvent(
-        new CustomEvent("Twitch-dany3lll3.video.play", {
+        new CustomEvent("twitch-dany3lll3.video.play", {
           detail: { embed: this.embed, sessionId },
         })
       );
@@ -136,7 +136,7 @@ export class TwitchStreamdany3lll3 extends HTMLElement {
       this.embed.addEventListener(Twitch.Player[ev], async () => {
         await this._handlePlayingState(ev);
         this.dispatchEvent(
-          new CustomEvent(`Twitch-dany3lll3.${ev.toLowerCase()}`, {
+          new CustomEvent(`twitch-dany3lll3.${ev.toLowerCase()}`, {
             detail: { embed: this.embed },
           })
         );
@@ -191,7 +191,7 @@ export class TwitchStreamdany3lll3 extends HTMLElement {
 
   static get template() {
     const template = document.createElement("template");
-    template.innerHTML = `<div id="Twitch-dany3lll3-embed"></div>`;
+    template.innerHTML = `<div id="twitch-dany3lll3-embed"></div>`;
     return template;
   }
 
@@ -223,6 +223,6 @@ export class TwitchStreamdany3lll3 extends HTMLElement {
   }
 }
 
-if (!customElements.get("Twitch-dany3lll3")) {
-  customElements.define("Twitch-dany3lll3", TwitchStreamdany3lll3);
+if (!customElements.get("twitch-dany3lll3")) {
+  customElements.define("twitch-dany3lll3", TwitchStreamdany3lll3);
 }

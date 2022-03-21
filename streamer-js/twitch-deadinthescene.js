@@ -85,7 +85,7 @@ export class TwitchStreamdeadinthescene extends HTMLElement {
             await this.importTwitch();
         }
         await this.newFrame();
-        let embedElem = this.shadowRoot.querySelector('#Twitch-deadinthescene-embed');
+        let embedElem = this.shadowRoot.querySelector('#twitch-deadinthescene-embed');
         const embed = new Twitch.Embed(embedElem, {
             width: this.width,
             height: this.height,
@@ -105,11 +105,11 @@ export class TwitchStreamdeadinthescene extends HTMLElement {
 
     _setEmbedListeners() {
         this.embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
-            this.dispatchEvent(new CustomEvent('Twitch-deadinthescene.video.ready', { detail: { embed: this.embed } }));
+            this.dispatchEvent(new CustomEvent('twitch-deadinthescene.video.ready', { detail: { embed: this.embed } }));
         });
         this.embed.addEventListener(Twitch.Embed.VIDEO_PLAY, sessionId => {
             this.dispatchEvent(
-                new CustomEvent('Twitch-deadinthescene.video.play', { detail: { embed: this.embed, sessionId } }),
+                new CustomEvent('twitch-deadinthescene.video.play', { detail: { embed: this.embed, sessionId } }),
             );
         });
         // Set all the callback events in a loop since we are just exposing them and no extra
@@ -119,7 +119,7 @@ export class TwitchStreamdeadinthescene extends HTMLElement {
             this.embed.addEventListener(Twitch.Player[ev], async () => {
                 await this._handlePlayingState(ev);
                 this.dispatchEvent(
-                    new CustomEvent(`Twitch-deadinthescene.${ev.toLowerCase()}`, { detail: { embed: this.embed } }),
+                    new CustomEvent(`twitch-deadinthescene.${ev.toLowerCase()}`, { detail: { embed: this.embed } }),
                 );
             });
         });
@@ -172,7 +172,7 @@ export class TwitchStreamdeadinthescene extends HTMLElement {
 
     static get template() {
         const template = document.createElement('template');
-        template.innerHTML = `<div id="Twitch-deadinthescene-embed"></div>`;
+        template.innerHTML = `<div id="twitch-deadinthescene-embed"></div>`;
         return template;
     }
 
@@ -202,8 +202,8 @@ export class TwitchStreamdeadinthescene extends HTMLElement {
     }
 }
 
-if (!customElements.get('Twitch-deadinthescene')) {
-    customElements.define('Twitch-deadinthescene', TwitchStreamdeadinthescene);
+if (!customElements.get('twitch-deadinthescene')) {
+    customElements.define('twitch-deadinthescene', TwitchStreamdeadinthescene);
 }
 
 
