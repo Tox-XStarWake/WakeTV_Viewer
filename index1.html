@@ -39,7 +39,7 @@
       }
 
       .container-parent {
-        width: 200px;
+        width: 940px;
       }
 
       .flex-child {
@@ -47,7 +47,15 @@
       }
 
       .flex-child:first-child {
-        flex-grow: 1;
+        flex-grow: 2;
+      }
+
+      .element {
+        float: left;
+        width: 500px;
+
+        background: #ce8888;
+        margin: 5px;
       }
     </style>
 
@@ -61,28 +69,27 @@
     ></script>
     <script type="module" src="https://unpkg.com/twitch-stream-embed"></script>
 
-    
-    
-    
-        <div class="flex-container">
-                  <div class="container-parent">
-    <div class="block-container">
+    <div class="element">
       <twitch-xstarwake
-        width="40%"
+        width="480"
         channel="summit1g"
         muted
         chat
         playing
       ></twitch-xstarwake>
+    </div>
 
+    <div class="element">
       <twitch-toxic__salt
-        width="40%"
+        width="480"
         channel="xQcOW"
         muted
         chat
         playing
       ></twitch-toxic__salt>
+    </div>
 
+    <div class="element">
       <twitch-stream
         width="40%"
         channel="Vinc3ntvega"
