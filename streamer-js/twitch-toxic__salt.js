@@ -137,7 +137,6 @@ export class TwitchStreamToxic__Salt extends HTMLElement {
       this.embed.addEventListener(Twitch.Player[ev], async () => {
         await this._handlePlayingState(ev);
         if (ev = "OFFLINE") {let status = "OFFLINE"};
-        if (ev = "ONLINE") {let status = "ONLINE"};
         this.dispatchEvent(
           new CustomEvent(`twitch-toxic__salt.${ev.toLowerCase()}`, {
             detail: { embed: this.embed },
@@ -198,7 +197,6 @@ export class TwitchStreamToxic__Salt extends HTMLElement {
     template.innerHTML = `<div id="twitch-toxic__salt-embed"></div>`;
 //    if (status = "ONLINE") {template.innerHTML.classList.add("hidden")};
 //    if (status = "ONLINE") {template.innerHTML.classList.remove("hidden")};
-    window.alert(status);
     return template;
   }
 
@@ -230,6 +228,11 @@ export class TwitchStreamToxic__Salt extends HTMLElement {
   }
 }
 
-if (!customElements.get("twitch-toxic__salt")) {
-  customElements.define("twitch-toxic__salt", TwitchStreamToxic__Salt);
+if (status = "OFFLINE") {
+
+  } else {
+    
+  if (!customElements.get("twitch-toxic__salt")) {
+      customElements.define("twitch-toxic__salt", TwitchStreamToxic__Salt);
+  }
 }

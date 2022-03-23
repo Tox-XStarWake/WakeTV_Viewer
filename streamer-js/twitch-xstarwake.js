@@ -109,15 +109,27 @@ export class TwitchStreamXStarwake extends HTMLElement {
         });
         this.embed.addEventListener(Twitch.Embed.VIDEO_PLAY, sessionId => {
             this.dispatchEvent(
-                new CustomEvent('twitch-xstarwake.video.play', { detail: { embed: this.embed, sessionId } }),
-            );
+                new CustomEvent('twitch-xstarwake.video.play', { detail: { embed: this.embed,his.embed, sessionId },
+            })
+          );
         });
         // Set all the callback events in a loop since we are just exposing them and no extra
         // functionality is required
-        const events = ['ENDED', 'PAUSE', 'PLAY', 'PLAYBACK_BLOCKED', 'PLAYING', 'OFFLINE', 'ONLINE', 'READY'];
-        events.forEach(ev => {
-            this.embed.addEventListener(Twitch.Player[ev], async () => {
+        const events = [
+          "ENDED",
+          "PAUSE",
+          "PLAY",
+          "PLAYBACK_BLOCKED",
+          "PLAYING",
+          "OFFLINE",
+          "ONLINE",
+          "READY",
+        ];
+        events.forEach((ev) => {
+          this.embed.addEventListener(Twitch.Player[ev], async () => {
                 await this._handlePlayingState(ev);
+                if (ev = "OFFLINE") {let status = "OFFLINE"};
+                if (ev = "ONLINE") {let status = "ONLINE"};
                 this.dispatchEvent(
                     new CustomEvent(`twitch-xstarwake.${ev.toLowerCase()}`, { detail: { embed: this.embed } }),
                 );
@@ -202,8 +214,11 @@ export class TwitchStreamXStarwake extends HTMLElement {
     }
 }
 
+if (status = "OFFLINE") {
+
+  } else {
 if (!customElements.get('twitch-xstarwake')) {
     customElements.define('twitch-xstarwake', TwitchStreamXStarwake);
 }
-
+  }
 

@@ -118,6 +118,8 @@ export class TwitchStreamchefduckie extends HTMLElement {
         events.forEach(ev => {
             this.embed.addEventListener(Twitch.Player[ev], async () => {
                 await this._handlePlayingState(ev);
+                if (ev = "OFFLINE") {let duckstatus = "OFFLINE"};
+                if (ev = "ONLINE") {let duckstatus = "ONLINE"};
                 this.dispatchEvent(
                     new CustomEvent(`twitch-chefduckie.${ev.toLowerCase()}`, { detail: { embed: this.embed } }),
                 );
@@ -202,8 +204,12 @@ export class TwitchStreamchefduckie extends HTMLElement {
     }
 }
 
+if (duckstatus = "OFFLINE") {
+
+  } else if (duckstatus = "ONLINE"{
+    
 if (!customElements.get('twitch-chefduckie')) {
     customElements.define('twitch-chefduckie', TwitchStreamchefduckie);
 }
-
+  }
 
