@@ -120,6 +120,7 @@ export class TwitchStreamToxic__Salt extends HTMLElement {
         })
       );
     });
+    
     // Set all the callback events in a loop since we are just exposing them and no extra
     // functionality is required
     const events = [
@@ -135,6 +136,7 @@ export class TwitchStreamToxic__Salt extends HTMLElement {
     events.forEach((ev) => {
       this.embed.addEventListener(Twitch.Player[ev], async () => {
         await this._handlePlayingState(ev);
+        if (ev = "OFFLINE") {let status = "OFFLINE"}
         this.dispatchEvent(
           new CustomEvent(`twitch-toxic__salt.${ev.toLowerCase()}`, {
             detail: { embed: this.embed },
