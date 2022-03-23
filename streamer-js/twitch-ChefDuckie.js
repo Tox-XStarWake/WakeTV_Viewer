@@ -118,15 +118,17 @@ export class TwitchStreamchefduckie extends HTMLElement {
         events.forEach(ev => {
             this.embed.addEventListener(Twitch.Player[ev], async () => {
                 await this._handlePlayingState(ev);
-                if (ev = "OFFLINE") {let duckstatus = "OFFLINE"};
-                if (ev = "ONLINE") {let duckstatus = "ONLINE"};
+                if (ev = "OFFLINE") {let status = "OFFLINE"};
+                if (ev = "ONLINE") {let status = "ONLINE"};
                 this.dispatchEvent(
                     new CustomEvent(`twitch-chefduckie.${ev.toLowerCase()}`, { detail: { embed: this.embed } }),
                 );
             });
         });
-    }
 
+    }
+//     window.alert(duckstatus)
+  
     async _handlePlayingState() {
         await this.wait(50);
         const isPaused = this.embed.isPaused();
@@ -175,6 +177,7 @@ export class TwitchStreamchefduckie extends HTMLElement {
     static get template() {
         const template = document.createElement('template');
         template.innerHTML = `<div id="twitch-chefduckie-embed"></div>`;
+      
         return template;
     }
 
@@ -203,13 +206,12 @@ export class TwitchStreamchefduckie extends HTMLElement {
         });
     }
 }
-
-if (duckstatus = "OFFLINE") {
-
-  } else if (duckstatus = "ONLINE"{
-    
-if (!customElements.get('twitch-chefduckie')) {
-    customElements.define('twitch-chefduckie', TwitchStreamchefduckie);
+//window.alert(duckstatus)
+if (1= 1) {
+  customElements.define('twitch-chefduckie', TwitchStreamchefduckie);
+} else {    
+    if (!customElements.get('twitch-chefduckie')) {
+        customElements.define('twitch-chefduckie', TwitchStreamchefduckie);
+    }
 }
-  }
 
