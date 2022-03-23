@@ -72,8 +72,8 @@
       type="text/javascript"
     ></script>
 
-<!--    <div class="streamer">  -->
-      <div class="xstarwake-streamer-class">
+    <div class="streamer"> 
+
       <div id="XStarWake-twitch-embed"></div>
       <script>
         var XStarWakeoptions = {
@@ -113,7 +113,7 @@
           );
         }
         function XStarWakehandleOnline() {
-          document.getElementById("xstarwake-streamer-class").classList.remove("hidden");
+<!--          document.getElementById("xstarwake-streamer-class").classList.remove("hidden");-->
 <!--          document.getElementById("XStarWake-twitch-embed").classList.remove("hidden"); -->
           XStarWakeStream.removeEventListener(
             Twitch.Embed.VIDEO_READY,
@@ -126,8 +126,8 @@
           XStarWakeStream.setMuted(false);
         }
         function XStarWakehandleOffline() {
-          var xstarwake-element = document.getElementById("XStarWake-twitch-embed);
-          xstarwake-element.style.display = "none";
+          var xstarwake_element = document.getElementById("XStarWake-twitch-embed);
+          xstarwake_element.style.display = "none";
 <!--           document.getElementById("XStarWake-twitch-embed").classList.add("hidden"); -->
 <!--           document.getElementById("xstarwake-streamer-class").classList.add("hidden"); -->
           XStarWakeStream.removeEventListener(
@@ -197,9 +197,8 @@
           Toxic__SaltStream.setMuted(false);
         }
         function Toxic__SalthandleOffline() {
-          document
-            .getElementById("Toxic__Salt-twitch-embed")
-            .classList.add("hidden");
+          var toxic__salt_element = document.getElementById("Toxic__Salt-twitch-embed);
+          toxic__salt_element.style.display = "none";
           Toxic__SaltStream.removeEventListener(
             Twitch.Embed.VIDEO_READY,
             Toxic__SalthandleOffline
@@ -266,9 +265,8 @@
           SpaceMagesStream.setMuted(false);
         }
         function SpaceMageshandleOffline() {
-          document
-            .getElementById("SpaceMages-twitch-embed")
-            .classList.add("hidden");
+          var spacemages_element = document.getElementById("SpaceMages-twitch-embed);
+          spacemages_element.style.display = "none";
           SpaceMagesStream.removeEventListener(
             Twitch.Embed.VIDEO_READY,
             SpaceMageshandleOffline
@@ -404,9 +402,8 @@
           ChefDuckieStream.setMuted(false);
         }
         function ChefDuckiehandleOffline() {
-          document
-            .getElementById("ChefDuckie-twitch-embed")
-            .classList.add("hidden");
+          var chefduckie_element = document.getElementById("ChefDuckie-twitch-embed);
+          chefduckie_element.style.display = "none";
           ChefDuckieStream.removeEventListener(
             Twitch.Embed.VIDEO_READY,
             ChefDuckiehandleOffline
