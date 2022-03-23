@@ -72,7 +72,7 @@
       type="text/javascript"
     ></script>
 
-    <div class="streamer"> 
+  <!--  <div class="streamer"> -->
 
       <div id="XStarWake-twitch-embed"></div>
       <script>
@@ -113,8 +113,7 @@
           );
         }
         function XStarWakehandleOnline() {
-<!--          document.getElementById("xstarwake-streamer-class").classList.remove("hidden");-->
-<!--          document.getElementById("XStarWake-twitch-embed").classList.remove("hidden"); -->
+          document.getElementById("XStarWake-twitch-embed").style.display = "block";
           XStarWakeStream.removeEventListener(
             Twitch.Embed.VIDEO_READY,
             XStarWakehandleOnline
@@ -126,10 +125,7 @@
           XStarWakeStream.setMuted(false);
         }
         function XStarWakehandleOffline() {
-          var xstarwake_element = document.getElementById("XStarWake-twitch-embed);
-          xstarwake_element.style.display = "none";
-<!--           document.getElementById("XStarWake-twitch-embed").classList.add("hidden"); -->
-<!--           document.getElementById("xstarwake-streamer-class").classList.add("hidden"); -->
+          document.getElementById("XStarWake-twitch-embed").style.display = "none";
           XStarWakeStream.removeEventListener(
             Twitch.Embed.VIDEO_READY,
             XStarWakehandleOffline
@@ -141,11 +137,10 @@
           XStarWakeStream.setMuted(true);
         }
       </script>
-    </div>
-<!--    </div>   -->
-    <div class="streamer">
+<!--     </div>
+    <div class="streamer"> -->
       <div id="Toxic__Salt-twitch-embed"></div>
-      <script defer>
+      <script>
         var Toxic__Saltoptions = {
           channel: "Toxic__Salt",
           width: 940,
@@ -183,9 +178,7 @@
           );
         }
         function Toxic__SalthandleOnline() {
-          document
-            .getElementById("Toxic__Salt-twitch-embed")
-            .classList.remove("hidden");
+          document.getElementById("Toxic__Salt-twitch-embed").style.display = "block";
           Toxic__SaltStream.removeEventListener(
             Twitch.Embed.VIDEO_READY,
             Toxic__SalthandleOnline
@@ -197,8 +190,7 @@
           Toxic__SaltStream.setMuted(false);
         }
         function Toxic__SalthandleOffline() {
-          var toxic__salt_element = document.getElementById("Toxic__Salt-twitch-embed);
-          toxic__salt_element.style.display = "none";
+          document.getElementById("Toxic__Salt-twitch-embed").style.display = "none";
           Toxic__SaltStream.removeEventListener(
             Twitch.Embed.VIDEO_READY,
             Toxic__SalthandleOffline
@@ -210,8 +202,8 @@
           Toxic__SaltStream.setMuted(true);
         }
       </script>
-    </div>
-    <div class="streamer">
+<!--     </div>
+    <div class="streamer"> -->
       <div id="SpaceMages-twitch-embed"></div>
       <script defer>
         var SpaceMagesoptions = {
@@ -251,9 +243,7 @@
           );
         }
         function SpaceMageshandleOnline() {
-          document
-            .getElementById("SpaceMages-twitch-embed")
-            .classList.remove("hidden");
+          document.getElementById("SpaceMages-twitch-embed").style.display = "block";
           SpaceMagesStream.removeEventListener(
             Twitch.Embed.VIDEO_READY,
             SpaceMageshandleOnline
@@ -265,8 +255,7 @@
           SpaceMagesStream.setMuted(false);
         }
         function SpaceMageshandleOffline() {
-          var spacemages_element = document.getElementById("SpaceMages-twitch-embed);
-          spacemages_element.style.display = "none";
+          document.getElementById("SpaceMages-twitch-embed").style.display = "none";
           SpaceMagesStream.removeEventListener(
             Twitch.Embed.VIDEO_READY,
             SpaceMageshandleOffline
@@ -278,8 +267,8 @@
           SpaceMagesStream.setMuted(true);
         }
       </script>
-    </div>
-    <div class="streamer">
+<!--     </div>
+    <div class="streamer"> -->
       <div id="theelphyys-twitch-embed"></div>
       <script defer>
         var theelphyysoptions = {
@@ -319,9 +308,7 @@
           );
         }
         function theelphyyshandleOnline() {
-          document
-            .getElementById("theelphyys-twitch-embed")
-            .classList.remove("hidden");
+          document.getElementById("theelphyys-twitch-embed").style.display = "block";
           theelphyysStream.removeEventListener(
             Twitch.Embed.VIDEO_READY,
             theelphyyshandleOnline
@@ -333,9 +320,7 @@
           theelphyysStream.setMuted(false);
         }
         function theelphyyshandleOffline() {
-          document
-            .getElementById("theelphyys-twitch-embed")
-            .classList.add("hidden");
+          document.getElementById("theelphyys-twitch-embed").style.display = "none";
           theelphyysStream.removeEventListener(
             Twitch.Embed.VIDEO_READY,
             theelphyyshandleOffline
@@ -347,8 +332,8 @@
           theelphyysStream.setMuted(true);
         }
       </script>
-    </div>
-    <div class="streamer">
+<!--     </div>
+    <div class="streamer"> -->
       <div id="ChefDuckie-twitch-embed"></div>
       <script defer>
         var ChefDuckieoptions = {
@@ -388,8 +373,7 @@
           );
         }
         function ChefDuckiehandleOnline() {
-          var chefduckieStatus = document.getElementById("ChefDuckie-twitch-embed);
-          chefduckieStatus.style.display = "block";
+          document.getElementById("ChefDuckie-twitch-embed").style.display = "block";
           ChefDuckieStream.removeEventListener(
             Twitch.Embed.VIDEO_READY,
             ChefDuckiehandleOnline
@@ -401,8 +385,7 @@
           ChefDuckieStream.setMuted(false);
         }
         function ChefDuckiehandleOffline() {
-          var chefduckieStatus = document.getElementById("ChefDuckie-twitch-embed);
-          chefduckieStatus.style.display = "none";
+          document.getElementById("ChefDuckie-twitch-embed").style.display = "none";
           ChefDuckieStream.removeEventListener(
             Twitch.Embed.VIDEO_READY,
             ChefDuckiehandleOffline
@@ -414,8 +397,8 @@
           ChefDuckieStream.setMuted(true);
         }
       </script>
-    </div>
-    <div class="streamer">
+<!--     </div>
+    <div class="streamer"> -->
       <div id="Dany3lll3-twitch-embed"></div>
       <script defer>
         var Dany3lll3options = {
@@ -483,8 +466,8 @@
           Dany3lll3Stream.setMuted(true);
         }
       </script>
-    </div>
-    <div class="streamer">
+<!--     </div>
+    <div class="streamer"> -->
       <div id="deadinthescene-twitch-embed"></div>
       <script defer>
         var deadinthesceneoptions = {
