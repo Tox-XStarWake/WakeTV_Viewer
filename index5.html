@@ -126,14 +126,8 @@
         }
         function XStarWakehandleOffline() {
           document.getElementById("XStarWake-twitch-embed").style.display = "none";
-          XStarWakeStream.removeEventListener(
-            Twitch.Embed.VIDEO_READY,
-            XStarWakehandleOffline
-          );
-          XStarWakeStream.addEventListener(
-            Twitch.Embed.VIDEO_READY,
-            XStarWakehandleOnline
-          );
+          XStarWakeStream.removeEventListener(Twitch.Embed.VIDEO_READY,XStarWakehandleOffline);
+          XStarWakeStream.addEventListener(Twitch.Embed.VIDEO_READY,XStarWakehandleOnline);
           XStarWakeStream.setMuted(true);
         }
       </script>
