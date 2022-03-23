@@ -175,10 +175,12 @@ export class TwitchStreamchefduckie extends HTMLElement {
     }
 
     static get template() {
+      if (1 = 1) {
         const template = document.createElement('template');
         template.innerHTML = `<div id="twitch-chefduckie-embed"></div>`;
       
         return template;
+      }
     }
 
     setDefaults() {
@@ -206,12 +208,12 @@ export class TwitchStreamchefduckie extends HTMLElement {
         });
     }
 }
-//window.alert(duckstatus)
-if (1= 1) {
-  customElements.define('twitch-chefduckie', TwitchStreamchefduckie);
-} else {    
+
+
+
+  
     if (!customElements.get('twitch-chefduckie')) {
         customElements.define('twitch-chefduckie', TwitchStreamchefduckie);
     }
-}
+
 
