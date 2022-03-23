@@ -388,9 +388,8 @@
           );
         }
         function ChefDuckiehandleOnline() {
-          document
-            .getElementById("ChefDuckie-twitch-embed")
-            .classList.remove("hidden");
+          var chefduckieStatus = document.getElementById("ChefDuckie-twitch-embed);
+          chefduckieStatus.style.display = "block";
           ChefDuckieStream.removeEventListener(
             Twitch.Embed.VIDEO_READY,
             ChefDuckiehandleOnline
@@ -402,8 +401,8 @@
           ChefDuckieStream.setMuted(false);
         }
         function ChefDuckiehandleOffline() {
-          var chefduckie_element = document.getElementById("ChefDuckie-twitch-embed);
-          chefduckie_element.style.display = "none";
+          var chefduckieStatus = document.getElementById("ChefDuckie-twitch-embed);
+          chefduckieStatus.style.display = "none";
           ChefDuckieStream.removeEventListener(
             Twitch.Embed.VIDEO_READY,
             ChefDuckiehandleOffline
