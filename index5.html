@@ -72,10 +72,10 @@
       type="text/javascript"
     ></script>
 
-    <div class="streamer">
-          <div class="xstarwake-streamer-class">
+<!--    <div class="streamer">  -->
+      <div class="xstarwake-streamer-class">
       <div id="XStarWake-twitch-embed"></div>
-      <script defer>
+      <script>
         var XStarWakeoptions = {
           channel: "XStarWake",
           width: 940,
@@ -113,8 +113,8 @@
           );
         }
         function XStarWakehandleOnline() {
-          document.getElementById("XStarWake-twitch-embed").classList.remove("hidden");
-          document.getElementById("XStarWake-twitch-embed").classList.remove("hidden");
+          document.getElementById("xstarwake-streamer-class").classList.remove("hidden");
+<!--          document.getElementById("XStarWake-twitch-embed").classList.remove("hidden"); -->
           XStarWakeStream.removeEventListener(
             Twitch.Embed.VIDEO_READY,
             XStarWakehandleOnline
@@ -126,9 +126,10 @@
           XStarWakeStream.setMuted(false);
         }
         function XStarWakehandleOffline() {
-          document
-            .getElementById("XStarWake-twitch-embed")
-            .classList.add("hidden");
+          var xstarwake-element = document.getElementById("XStarWake-twitch-embed);
+          xstarwake-element.style.display = "none";
+<!--           document.getElementById("XStarWake-twitch-embed").classList.add("hidden"); -->
+<!--           document.getElementById("xstarwake-streamer-class").classList.add("hidden"); -->
           XStarWakeStream.removeEventListener(
             Twitch.Embed.VIDEO_READY,
             XStarWakehandleOffline
@@ -141,6 +142,7 @@
         }
       </script>
     </div>
+<!--    </div>   -->
     <div class="streamer">
       <div id="Toxic__Salt-twitch-embed"></div>
       <script defer>
