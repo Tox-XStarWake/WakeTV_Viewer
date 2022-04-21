@@ -95,6 +95,7 @@ h3 {
     padding-bottom: 56.25%; /* 16:9 */
     padding-top: 25px;
     height: 0;
+    display: none; 
   }
   
   #twitch-player object, #twitch-player iframe {
