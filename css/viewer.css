@@ -82,7 +82,7 @@ h3 {
     height: 0;
   }
 
-  /*
+
   #twitch-embed object, #twitch-embed iframe {
     position: absolute;
     top: 0;
@@ -90,9 +90,10 @@ h3 {
     width: 50%;
     height: 50%;
   }
-  */
+
 
   #twitch-player {
+    display: none; 
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
     padding-top: 25px;
