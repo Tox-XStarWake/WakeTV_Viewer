@@ -21,6 +21,7 @@ body {
     background-color: #778899;
     font-family: 'Tahoma', sans-serif;
     color: #000080;
+    display: inline;
 }
 
 h1 {
@@ -31,7 +32,7 @@ h1 {
     margin: 0 0 15px 0;
     text-align: left;
     text-transform: uppercase;
-    color: #fff;
+    color: #ffffff;
 }
 
 h2 {

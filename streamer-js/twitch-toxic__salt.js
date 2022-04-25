@@ -137,6 +137,9 @@ export class TwitchStreamToxic__Salt extends HTMLElement {
       this.embed.addEventListener(Twitch.Player[ev], async () => {
         await this._handlePlayingState(ev);
         if (ev = "OFFLINE") {let status = "OFFLINE"};
+        if (ev = "ENDED") {let status = "OFFLINE"};
+        if (ev = "ONLINE") {let status = "ONLINE"};
+        if (ev = "PLAYING") {let status = "ONLINE"};
         this.dispatchEvent(
           new CustomEvent(`twitch-toxic__salt.${ev.toLowerCase()}`, {
             detail: { embed: this.embed },
