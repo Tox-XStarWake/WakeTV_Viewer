@@ -79,21 +79,20 @@ h3 {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
     padding-top: 25px;
-/*    height: 0; */
+    height: 0;
   }
 
-
+  /*
   #twitch-embed object, #twitch-embed iframe {
     position: absolute;
     top: 0;
     left: 0;
-    width: 45%;
-    height: 85%; 
+    width: 50%;
+    height: 50%;
   }
-
+  */
 
   #twitch-player {
-    display: none; 
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
     padding-top: 25px;
