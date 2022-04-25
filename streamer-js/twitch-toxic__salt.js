@@ -1,6 +1,6 @@
 export class TwitchStreamtheelphyys extends HTMLElement {
-    static TWITCH_EMBED_URL = 'https://embed.twitch.tv/embed/v1.js';
-    static get attributes() {
+  static TWITCH_EMBED_URL = 'https://embed.twitch.tv/embed/v1.js';
+  static get attributes() {
         return {
             channel: {},
             width: { default: 940 },
