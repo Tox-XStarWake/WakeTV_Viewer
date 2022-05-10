@@ -58,6 +58,7 @@ h3 {
 
 .hide { 
     display: none; 
+    visibility: hidden;
 }
 
 #twitch {
