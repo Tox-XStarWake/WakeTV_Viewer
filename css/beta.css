@@ -61,7 +61,10 @@ h3 {
 }
 
 .hide { 
+    /*
     display: none; 
+    */
+    display:inline-block; 
     padding-left: 1px;
 }
 
