@@ -66,7 +66,8 @@ h3 {
 }
 
 .show { 
-    display:inline-block; 
+    display: flex; 
+    align-items: flex-end;
     padding-left: 1px;
 }
 
@@ -74,6 +75,7 @@ h3 {
     position: relative;
     padding-bottom: 16.25%; /* 16:9 */
     padding-top: 25px;
+    align: left;
 }
 
 .toxic__salt-player {
