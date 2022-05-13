@@ -44,7 +44,7 @@ h3 {
 }
 
 .hide { 
-    display: inline-block; 
+    display: none; 
     padding-left: 1px;
 }
 
