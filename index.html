@@ -54,7 +54,6 @@
       <div id="laxqc-player"></div>
       <div id="luminiousdbd-player"></div>
       <div id="madnessqtv-player"></div>
-      <div id="mariannewray-player"></div>
       <div id="partysaurusrex123-player"></div>
       <div id="r3v3rs3r-player"></div>
       <div id="saltyluk-player"></div>
@@ -1205,50 +1204,6 @@
     madnessqtvplayer.removeEventListener(Twitch.Player.OFFLINE, madnessqtvOffline);
     madnessqtvplayer.addEventListener(Twitch.Player.ONLINE, madnessqtvOnline);
     madnessqtvplayer.setMuted(true);
-  }
-
-</script>
-
-<script>
-  var mariannewrayoptions = {
-    channel: "mariannewray",
-    width: 400,
-    height: 225,
-    layout: "video-with-chat",
-    theme: "dark",
-    parent: [
-      "glitch.com",
-      "xstarwake.org",
-      "www.xstarwake.org",
-      "www-xstarwake-org.glitch.me",
-      "localhost",
-    ],
-  };
-
-  var mariannewrayplayer = new Twitch.Player("mariannewray-player", mariannewrayoptions);
-  mariannewrayplayer.addEventListener(Twitch.Player.READY, mariannewrayinitiate)
-  mariannewrayembed.addEventListener(Twitch.Player.VIDEO_READY, mariannewrayinitiate)
-
-  function mariannewrayinitiate() {
-    mariannewrayplayer.addEventListener(Twitch.Player.ONLINE, mariannewrayOnline);
-    mariannewrayplayer.addEventListener(Twitch.Player.OFFLINE, mariannewrayOffline);
-    mariannewrayplayer.removeEventListener(Twitch.Player.READY, mariannewrayinitiate);
-  }
-
-  function mariannewrayOnline() {
-    document.getElementById("mariannewray-player").classList.remove('hide');
-    document.getElementById("mariannewray-player").classList.add('show');
-    mariannewrayplayer.removeEventListener(Twitch.Player.ONLINE, mariannewrayOnline);
-    mariannewrayplayer.addEventListener(Twitch.Player.OFFLINE, mariannewrayOffline);
-    mariannewrayplayer.setMuted(false);
-  }
-
-  function mariannewrayOffline() {
-    document.getElementById("mariannewray-player").classList.add('hide');
-    document.getElementById("mariannewray-player").classList.remove('show');
-    mariannewrayplayer.removeEventListener(Twitch.Player.OFFLINE, mariannewrayOffline);
-    mariannewrayplayer.addEventListener(Twitch.Player.ONLINE, mariannewrayOnline);
-    mariannewrayplayer.setMuted(true);
   }
 
 </script>
