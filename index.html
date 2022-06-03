@@ -44,7 +44,6 @@
       <div id="theelphyys-player"></div>
       <div id="sksgodofgames-player"></div>
       <div id="skylarpuppy-player"></div>
-      <div id="annaomaly-player"></div>
       <div id="demispooks-player"></div>
       <div id="icetigerzone-player"></div>
       <div id="jazzthegaymer-player"></div>
@@ -815,49 +814,6 @@
 
 </script>
 
-<script>
-  var annaomalyoptions = {
-    channel: "annaomaly",
-    width: 400,
-    height: 225,
-    layout: "video-with-chat",
-    theme: "dark",
-    parent: [
-      "glitch.com",
-      "xstarwake.org",
-      "www.xstarwake.org",
-      "www-xstarwake-org.glitch.me",
-      "localhost",
-    ],
-  };
-
-  var annaomalyplayer = new Twitch.Player("annaomaly-player", annaomalyoptions);
-  annaomalyplayer.addEventListener(Twitch.Player.READY, annaomalyinitiate)
-  annaomalyembed.addEventListener(Twitch.Player.VIDEO_READY, annaomalyinitiate)
-
-  function annaomalyinitiate() {
-    annaomalyplayer.addEventListener(Twitch.Player.ONLINE, annaomalyOnline);
-    annaomalyplayer.addEventListener(Twitch.Player.OFFLINE, annaomalyOffline);
-    annaomalyplayer.removeEventListener(Twitch.Player.READY, annaomalyinitiate);
-  }
-
-  function annaomalyOnline() {
-    document.getElementById("annaomaly-player").classList.remove('hide');
-    document.getElementById("annaomaly-player").classList.add('show');
-    annaomalyplayer.removeEventListener(Twitch.Player.ONLINE, annaomalyOnline);
-    annaomalyplayer.addEventListener(Twitch.Player.OFFLINE, annaomalyOffline);
-    annaomalyplayer.setMuted(true);
-  }
-
-  function annaomalyOffline() {
-    document.getElementById("annaomaly-player").classList.add('hide');
-    document.getElementById("annaomaly-player").classList.remove('show');
-    annaomalyplayer.removeEventListener(Twitch.Player.OFFLINE, annaomalyOffline);
-    annaomalyplayer.addEventListener(Twitch.Player.ONLINE, annaomalyOnline);
-    annaomalyplayer.setMuted(true);
-  }
-
-</script>
 
 <script>
   var demispooksoptions = {
